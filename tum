@@ -1,0 +1,16 @@
+#! /bin/sh
+
+#export JAVA_OPTS="-Xmx512M" 
+
+#while getopts ndr opt
+#do
+#  case "$opt" in
+#    n) SBTOPTS="$SBTOPTS -Dsbt.log.noformat=true"; shift;;
+#    d) export JAVA_OPTS="$JAVA_OPTS -Xdebug -Xrunjdwp:transport=dt_socket,address=1773,server=y,suspend=n"; shift;;
+#    r) export JAVA_OPTS="$JAVA_OPTS -noverify -javaagent:$JREBEL_HOME/jrebel.jar"; shift;;
+#  esac
+#done
+
+#echo "opts" $SBTOPTS
+#echo "param" $@
+java $JAVA_OPTS $TUMOPTS -jar `dirname $0`/tumblishr.jar "$@"
