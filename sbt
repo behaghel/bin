@@ -2,7 +2,7 @@
 
 export JAVA_OPTS="-Xmx512M" 
 
-while getopts ndr opt
+while getopts ndrl opt
 do
   case "$opt" in
     # Remove colors from sbt output. 

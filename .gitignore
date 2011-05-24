@@ -11,3 +11,5 @@ rawshark
 text2pcap
 tshark
 wireshark
+*.zip
+jrebel
