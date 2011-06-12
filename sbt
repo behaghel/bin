@@ -1,7 +1,6 @@
 #! /bin/sh
 
-export JAVA_OPTS="-Xmx512M" 
-
+export JAVA_OPTS="-Dfile.encoding=UTF8 -Xss1M -XX:MaxPermSize=256m -Xmx512M" 
 while getopts ndrl opt
 do
   case "$opt" in
