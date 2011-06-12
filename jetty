@@ -1,0 +1,16 @@
+#!/bin/bash
+
+export JAVA_OPTS="-XX:MaxPermSize=256m -Xmx512M $JAVA_OPTS" 
+
+while getopts r opt
+do
+  case "$opt" in
+    r) export JAVA_OPTS="$JAVA_OPTS -noverify -javaagent:$JREBEL_HOME/jrebel.jar"; shift;;
+  esac
+done
+
+# for some reason, jetty.sh looks for JAVA_OPTIONS
+# and not the conventional JAVA_OPTS
+export JAVA_OPTIONS=$JAVA_OPTS
+
+$JETTY_HOME/bin/jetty.sh $@

@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# kill first process that contains $1 in command
+# dangerous!
+
+ps ax | grep $1 | cut -d ' ' -f 1 | xargs kill
